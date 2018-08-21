@@ -1,0 +1,9 @@
+C:\Users\adipu\Documents\Visual Studio 2015\Projects\project12\WcfTokenService\WcfTokenService\bin\WcfTokenService.dll.config
+C:\Users\adipu\Documents\Visual Studio 2015\Projects\project12\WcfTokenService\WcfTokenService\bin\WcfTokenService.dll
+C:\Users\adipu\Documents\Visual Studio 2015\Projects\project12\WcfTokenService\WcfTokenService\bin\WcfTokenService.pdb
+C:\Users\adipu\Documents\Visual Studio 2015\Projects\project12\WcfTokenService\WcfTokenService\bin\EntityFramework.dll
+C:\Users\adipu\Documents\Visual Studio 2015\Projects\project12\WcfTokenService\WcfTokenService\bin\EntityFramework.SqlServer.dll
+C:\Users\adipu\Documents\Visual Studio 2015\Projects\project12\WcfTokenService\WcfTokenService\bin\EntityFramework.xml
+C:\Users\adipu\Documents\Visual Studio 2015\Projects\project12\WcfTokenService\WcfTokenService\bin\EntityFramework.SqlServer.xml
+C:\Users\adipu\Documents\Visual Studio 2015\Projects\project12\WcfTokenService\WcfTokenService\obj\Release\WcfTokenService.dll
+C:\Users\adipu\Documents\Visual Studio 2015\Projects\project12\WcfTokenService\WcfTokenService\obj\Release\WcfTokenService.pdb

@@ -1,0 +1,63 @@
+C:\Users\adipu\Documents\Visual Studio 2015\Projects\project12\WcfTokenService\WcfTokenService\bin\WcfTokenService.dll.config
+C:\Users\adipu\Documents\Visual Studio 2015\Projects\project12\WcfTokenService\WcfTokenService\bin\WcfTokenService.dll
+C:\Users\adipu\Documents\Visual Studio 2015\Projects\project12\WcfTokenService\WcfTokenService\bin\WcfTokenService.pdb
+C:\Users\adipu\Documents\Visual Studio 2015\Projects\project12\WcfTokenService\WcfTokenService\bin\EntityFramework.dll
+C:\Users\adipu\Documents\Visual Studio 2015\Projects\project12\WcfTokenService\WcfTokenService\bin\EntityFramework.SqlServer.dll
+C:\Users\adipu\Documents\Visual Studio 2015\Projects\project12\WcfTokenService\WcfTokenService\bin\Newtonsoft.Json.dll
+C:\Users\adipu\Documents\Visual Studio 2015\Projects\project12\WcfTokenService\WcfTokenService\bin\EntityFramework.xml
+C:\Users\adipu\Documents\Visual Studio 2015\Projects\project12\WcfTokenService\WcfTokenService\bin\EntityFramework.SqlServer.xml
+C:\Users\adipu\Documents\Visual Studio 2015\Projects\project12\WcfTokenService\WcfTokenService\bin\Newtonsoft.Json.xml
+C:\Users\adipu\Documents\Visual Studio 2015\Projects\project12\WcfTokenService\WcfTokenService\obj\Debug\WcfTokenService.dll
+C:\Users\adipu\Documents\Visual Studio 2015\Projects\project12\WcfTokenService\WcfTokenService\obj\Debug\WcfTokenService.pdb
+C:\ServerApp\WcfTokenService\WcfTokenService\bin\WcfTokenService.dll.config
+C:\ServerApp\WcfTokenService\WcfTokenService\bin\WcfTokenService.dll
+C:\ServerApp\WcfTokenService\WcfTokenService\bin\WcfTokenService.pdb
+C:\ServerApp\WcfTokenService\WcfTokenService\bin\EntityFramework.dll
+C:\ServerApp\WcfTokenService\WcfTokenService\bin\EntityFramework.SqlServer.dll
+C:\ServerApp\WcfTokenService\WcfTokenService\bin\Newtonsoft.Json.dll
+C:\ServerApp\WcfTokenService\WcfTokenService\bin\EntityFramework.xml
+C:\ServerApp\WcfTokenService\WcfTokenService\bin\EntityFramework.SqlServer.xml
+C:\ServerApp\WcfTokenService\WcfTokenService\bin\Newtonsoft.Json.xml
+C:\ServerApp\WcfTokenService\WcfTokenService\obj\Debug\WcfTokenService.dll
+C:\ServerApp\WcfTokenService\WcfTokenService\obj\Debug\WcfTokenService.pdb
+C:\ServerApp\WcfTokenService\WcfTokenService\obj\Debug\WcfTokenService.csprojResolveAssemblyReference.cache
+C:\Projects\LoginAngularJs\WcfTokenService\WcfTokenService\bin\WcfTokenService.dll.config
+C:\Projects\LoginAngularJs\WcfTokenService\WcfTokenService\bin\WcfTokenService.dll
+C:\Projects\LoginAngularJs\WcfTokenService\WcfTokenService\bin\WcfTokenService.pdb
+C:\Projects\LoginAngularJs\WcfTokenService\WcfTokenService\bin\EntityFramework.dll
+C:\Projects\LoginAngularJs\WcfTokenService\WcfTokenService\bin\EntityFramework.SqlServer.dll
+C:\Projects\LoginAngularJs\WcfTokenService\WcfTokenService\bin\Microsoft.Data.Tools.Schema.Sql.UnitTesting.dll
+C:\Projects\LoginAngularJs\WcfTokenService\WcfTokenService\bin\Microsoft.Data.Tools.Schema.Sql.UnitTestingAdapter.dll
+C:\Projects\LoginAngularJs\WcfTokenService\WcfTokenService\bin\Newtonsoft.Json.dll
+C:\Projects\LoginAngularJs\WcfTokenService\WcfTokenService\bin\WTS.Model.dll
+C:\Projects\LoginAngularJs\WcfTokenService\WcfTokenService\bin\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Projects\LoginAngularJs\WcfTokenService\WcfTokenService\bin\Microsoft.Build.dll
+C:\Projects\LoginAngularJs\WcfTokenService\WcfTokenService\bin\Microsoft.Build.Framework.dll
+C:\Projects\LoginAngularJs\WcfTokenService\WcfTokenService\bin\System.Collections.Immutable.dll
+C:\Projects\LoginAngularJs\WcfTokenService\WcfTokenService\bin\System.IO.Compression.dll
+C:\Projects\LoginAngularJs\WcfTokenService\WcfTokenService\bin\System.Threading.Tasks.Dataflow.dll
+C:\Projects\LoginAngularJs\WcfTokenService\WcfTokenService\bin\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Projects\LoginAngularJs\WcfTokenService\WcfTokenService\bin\WTS.Model.pdb
+C:\Projects\LoginAngularJs\WcfTokenService\WcfTokenService\bin\WTS.Model.dll.config
+C:\Projects\LoginAngularJs\WcfTokenService\WcfTokenService\bin\EntityFramework.xml
+C:\Projects\LoginAngularJs\WcfTokenService\WcfTokenService\bin\EntityFramework.SqlServer.xml
+C:\Projects\LoginAngularJs\WcfTokenService\WcfTokenService\bin\Newtonsoft.Json.xml
+C:\Projects\LoginAngularJs\WcfTokenService\WcfTokenService\bin\cs\Microsoft.Build.resources.dll
+C:\Projects\LoginAngularJs\WcfTokenService\WcfTokenService\bin\de\Microsoft.Build.resources.dll
+C:\Projects\LoginAngularJs\WcfTokenService\WcfTokenService\bin\en\Microsoft.Build.resources.dll
+C:\Projects\LoginAngularJs\WcfTokenService\WcfTokenService\bin\es\Microsoft.Build.resources.dll
+C:\Projects\LoginAngularJs\WcfTokenService\WcfTokenService\bin\fr\Microsoft.Build.resources.dll
+C:\Projects\LoginAngularJs\WcfTokenService\WcfTokenService\bin\it\Microsoft.Build.resources.dll
+C:\Projects\LoginAngularJs\WcfTokenService\WcfTokenService\bin\ja\Microsoft.Build.resources.dll
+C:\Projects\LoginAngularJs\WcfTokenService\WcfTokenService\bin\ko\Microsoft.Build.resources.dll
+C:\Projects\LoginAngularJs\WcfTokenService\WcfTokenService\bin\pl\Microsoft.Build.resources.dll
+C:\Projects\LoginAngularJs\WcfTokenService\WcfTokenService\bin\pt-BR\Microsoft.Build.resources.dll
+C:\Projects\LoginAngularJs\WcfTokenService\WcfTokenService\bin\ru\Microsoft.Build.resources.dll
+C:\Projects\LoginAngularJs\WcfTokenService\WcfTokenService\bin\tr\Microsoft.Build.resources.dll
+C:\Projects\LoginAngularJs\WcfTokenService\WcfTokenService\bin\zh-Hans\Microsoft.Build.resources.dll
+C:\Projects\LoginAngularJs\WcfTokenService\WcfTokenService\bin\zh-Hant\Microsoft.Build.resources.dll
+C:\Projects\LoginAngularJs\WcfTokenService\WcfTokenService\obj\Debug\WcfTokenService.csprojAssemblyReference.cache
+C:\Projects\LoginAngularJs\WcfTokenService\WcfTokenService\obj\Debug\WcfTokenService.csproj.CoreCompileInputs.cache
+C:\Projects\LoginAngularJs\WcfTokenService\WcfTokenService\obj\Debug\WcfTokenService.csproj.CopyComplete
+C:\Projects\LoginAngularJs\WcfTokenService\WcfTokenService\obj\Debug\WcfTokenService.dll
+C:\Projects\LoginAngularJs\WcfTokenService\WcfTokenService\obj\Debug\WcfTokenService.pdb

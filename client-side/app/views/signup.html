@@ -1,0 +1,24 @@
+﻿<form class="form-login" role="form" name="form-signup" >
+    <h2 class="form-login-heading">Inregistrare utilizator</h2>
+    <div class="form-group">
+        <label>Nume utilizator</label>
+        <input type="text" class="form-control" name="username" placeholder="Nume utilizator" data-ng-model="registration.userName" required autofocus>
+        <div ng-messages="username.$error" data-ng-messages-include="app/views/messages.html"></div>
+    </div>
+    <div class="form-group">
+        <label>Parola</label>
+        <input type="password" class="form-control" name="password" placeholder="Parola" data-ng-model="registration.password" required>
+        <div ng-messages="password.$error" data-ng-messages-include="app/views/messages.html"></div>
+    </div>
+    <div class="form-group">
+        <label>Parola de confirmare</label>
+        <input type="password" class="form-control" name="confirmPassword"
+               placeholder="Parola de confirmare" 
+               data-ng-model="registration.confirmPassword" required>
+        <div ng-messages="confirmPassword.$error" data-ng-messages-include="app/views/messages.html"></div>
+    </div>
+        <button class="btn btn-lg btn-info btn-block" type="submit" data-ng-click="signUp()">Submit</button>
+        <div data-ng-hide="message == ''" data-ng-class="(savedSuccessfully) ? 'alert alert-success' : 'alert alert-danger'">
+            {{ message }}
+        </div>
+</form>

@@ -1,0 +1,63 @@
+﻿<!doctype html>
+<html data-ng-app="userApp">
+<head>
+    <base href="https://localhost/client-side/" />
+    <meta charset="utf-8">
+    <link rel="icon" href="content/img/favicon.ico">
+    <link href="content/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="content/js/angular.min.js"></script>
+    <script src="content/js/angular-route.min.js"></script>
+    <script src="content/js/angular-cookies.min.js"></script>
+    <script src="content/js/angular-messages.min.js"></script>
+    <script src="content/js/ui-bootstrap-tpls-2.5.0.min.js"></script>
+    <title>Modul Utilizatori</title>
+</head>
+<body>
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation" data-ng-controller="indexController">
+            <div class="container">
+                <div class="navbar-header">
+                    <button class="btn btn-success navbar-toggle" data-toggle="collapse" data-target="#class-collapse" data-ng-click="navbarExpanded = !navbarExpanded">
+                        <span class="glyphicon glyphicon-chevron-down"></span>
+                    </button>
+                    <a class="navbar-brand" href="./">Modul Utilizatori</a>
+                </div>
+                <div class="collapse navbar-collapse" id="class-collapse" data-collapse="!navbarExpanded">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li data-ng-hide="!authentication.isAuth"><a href="">Utilizator autentificat : {{authentication.userName}} Drepturi : {{authentication.Role}}</a></li>
+                        <li data-ng-hide="!authentication.isAuth"><a href="usersList">Lista utilizatori</a></li>
+                        <li data-ng-hide="!authentication.isAuth"><a href="" data-ng-click="logOut()">Logout</a></li>
+                        <li data-ng-hide="authentication.isAuth"> <a href="./login">Login</a></li>
+                        <li data-ng-hide="authentication.isAuth"> <a href="./signup">Sign Up</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <ng-view></ng-view>
+    </div>
+    <!-- 3rd party libraries -->
+    <script src="content/js/angular-cookies.min.js"></script>
+    <!-- Load app main script -->
+    <script src="app/app.js"></script>
+    <!-- Load factories -->
+    <script src="app/factories/Base64Factory.js"></script>
+    <script src="app/factories/usersListService.js"></script>
+    <script src="app/factories/authService.js"></script>
+    <script src="app/factories/authInterceptorService.js"></script>
+    <!-- Load directives -->
+    <script src="app/directives/compareTo.js"></script>
+    <!-- Load controllers -->
+    <script src="app/controllers/indexController.js"></script>
+    <script src="app/controllers/homeController.js"></script>
+    <script src="app/controllers/usersListController.js"></script>
+    <script src="app/controllers/loginController.js"></script>
+    <script src="app/controllers/signupController.js"></script>
+    <script src="app/controllers/userDetailsController.js"></script>
+    <!-- Load custom filters -->
+    <script src="app/filters/truncateFilter.js"></script>
+    <!-- Load custom directives -->
+
+</body>
+</html>

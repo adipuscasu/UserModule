@@ -1,0 +1,11 @@
+C:\Projects\LoginAngularJs\WcfTokenService\WTS.Model\bin\Debug\WTS.Model.dll.config
+C:\Projects\LoginAngularJs\WcfTokenService\WTS.Model\bin\Debug\WTS.Model.dll
+C:\Projects\LoginAngularJs\WcfTokenService\WTS.Model\bin\Debug\WTS.Model.pdb
+C:\Projects\LoginAngularJs\WcfTokenService\WTS.Model\bin\Debug\EntityFramework.dll
+C:\Projects\LoginAngularJs\WcfTokenService\WTS.Model\bin\Debug\EntityFramework.SqlServer.dll
+C:\Projects\LoginAngularJs\WcfTokenService\WTS.Model\bin\Debug\EntityFramework.xml
+C:\Projects\LoginAngularJs\WcfTokenService\WTS.Model\bin\Debug\EntityFramework.SqlServer.xml
+C:\Projects\LoginAngularJs\WcfTokenService\WTS.Model\obj\Debug\WTS.Model.csproj.CoreCompileInputs.cache
+C:\Projects\LoginAngularJs\WcfTokenService\WTS.Model\obj\Debug\WTS.Model.csproj.CopyComplete
+C:\Projects\LoginAngularJs\WcfTokenService\WTS.Model\obj\Debug\WTS.Model.dll
+C:\Projects\LoginAngularJs\WcfTokenService\WTS.Model\obj\Debug\WTS.Model.pdb

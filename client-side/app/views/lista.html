@@ -1,0 +1,36 @@
+﻿<div class="row">
+    <div class="col-md-2">
+        &nbsp;
+    </div>
+    <div class="col-md-8">
+        <table class="table table-striped table-busered table-hover">
+            <thead>
+                <tr>
+                    <th>Nume utilizator</th>
+                    <th>Rol</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr data-ng-repeat="user in users">
+                    <td>
+                        {{ user.Username }}
+                    </td>
+                    <td>
+                        {{ user.Role }}
+                    </td>
+                    <td>
+                       <input type="button" class="btn btn-info btn-sm" value="Actualizare" data-ng-click="userViewDetails(user.Id);">
+                        <input type="button" class="btn btn-sm btn-danger" value="Sterge" data-ng-show="{{isAdmin()}}" data-ng-click="userDelete(user.Id);">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div data-ng-hide="message == ''" data-ng-class="(deletedSuccessfully) ? 'alert alert-success' : 'alert alert-danger'">
+            {{ message }}
+        </div>
+    </div>
+
+    <div class="col-md-2">
+        &nbsp;
+    </div>
+</div>

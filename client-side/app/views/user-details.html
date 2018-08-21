@@ -1,0 +1,37 @@
+﻿<form class="form-group" role="form" name="form-detalii">
+    <div class="page-header row">
+        <h1>Detaliile utilizatorului : {{user.Username}}</h1>
+    </div>
+    <div class="form-group">
+        <label>Nume utilizator</label>
+        <input type="text" class="form-control" name="username" placeholder="Nume utilizator" data-ng-disabled="(!editCurrentUserAsUser()&&!isAdmin())" data-ng-model="user.Username" required autofocus>
+    </div>
+    <div class="form-group">
+        <label>Rol utilizator : </label>
+        <div class="radio">
+            <label>
+                <input type="radio" data-ng-model="user.Role" data-ng-disabled="(!editCurrentUserAsUser()&&!isAdmin())" value="user">
+                Utilizator
+            </label>
+            <label>
+                <input type="radio" data-ng-model="user.Role" data-ng-disabled="!isAdmin()" value="admin">
+                Administrator
+            </label>
+        </div>
+    </div>
+    <div class="form-group" data-ng-hide="!user.chPass">
+        <label>Parola</label>
+        <input type="password" class="form-control" name="password" placeholder="Parola" data-ng-model="user.Password" required>
+    </div>
+    <div class="form-group" data-ng-hide="!user.chPass">
+        <label>Parola de confirmare</label>
+        <input type="password" class="form-control" name="confirmPassword"
+               placeholder="Parola de confirmare"
+               data-ng-model="user.confirmPassword" required>
+    </div>
+    <button class="btn btn-lg btn-succes btn-block" type="button" data-ng-hide="user.chPass" data-ng-disabled="(!editCurrentUserAsUser()&&!isAdmin())" data-ng-click="user.chPass = !user.chPass;user.Password='';user.confirmPassword='';">Schimba parola</button>
+    <button class="btn btn-lg btn-info btn-block" type="submit" data-ng-click="updateUser(user);" >Actualizeaza</button>
+    <div data-ng-hide="message == ''" data-ng-class="(updatedSuccessfully) ? 'alert alert-success' : 'alert alert-danger'">
+        {{ message }}
+    </div>
+</form>
