@@ -1,4 +1,4 @@
-﻿var app = angular.module('userApp', ['ui.bootstrap', 'ngRoute', 'ngCookies']);
+var app = angular.module('userApp', ['ui.bootstrap', 'ngRoute', 'ngCookies']);
 
 app.config(function ($routeProvider, $locationProvider) {
 
@@ -6,7 +6,6 @@ app.config(function ($routeProvider, $locationProvider) {
         enabled: true,
         requireBase: true
     });
-
     $routeProvider.when("/", {
         controller: "homeController",
         templateUrl: "./app/views/home.html"

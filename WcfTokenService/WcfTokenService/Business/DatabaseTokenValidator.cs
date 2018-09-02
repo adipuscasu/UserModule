@@ -3,6 +3,7 @@ using System.Linq;
 using WcfTokenService.Database;
 using WcfTokenService.Interfaces;
 using WTS.Model.Security;
+using Token = WTS.Model.Security.Token;
 
 namespace WcfTokenService.Business
 {
@@ -30,6 +31,7 @@ namespace WcfTokenService.Business
             return span.TotalSeconds > DefaultSecondsUntilTokenExpires;
         }
 
-        public Token Token { get; set; }
+        public WTS.Model.Security.Token Token { get; set; }
+        Token ITokenValidator.Token { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
     }
 }

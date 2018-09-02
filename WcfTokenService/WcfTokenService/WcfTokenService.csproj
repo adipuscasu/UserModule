@@ -82,10 +82,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="1.dbScripts\UserToken.sql" />
-    <Content Include="App_Data\UserTokenDatabase.mdf" />
-    <Content Include="App_Data\UserTokenDatabase_log.ldf">
-      <DependentUpon>UserTokenDatabase.mdf</DependentUpon>
-    </Content>
     <Content Include="Global.asax" />
     <Content Include="Services\AuthenticationTokenService.svc" />
     <Content Include="Services\UserService.svc" />
@@ -143,7 +139,9 @@
       <Name>WTS.Model</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
   <ItemGroup Condition="$(VisualStudioVersion) == '15.0'">
     <Reference Include="Microsoft.Data.Tools.Schema.Sql, Version=13.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>$(SSDTPath)\Microsoft.Data.Tools.Schema.Sql.dll</HintPath>
