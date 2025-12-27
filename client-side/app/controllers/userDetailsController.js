@@ -1,5 +1,5 @@
 ﻿'use strict';
-app.controller('userDetailsController', ['$scope', 'usersListService', 'authService', '$location', '$routeParams', '$route', '$timeout', function ($scope, usersListService, authService, $location, $routeParams, $route,$timeout) {
+app.controller('userDetailsController', ['$scope', 'usersListService', 'authService', '$location', '$routeParams', '$route', '$timeout', function ($scope, usersListService, authService, $location, $routeParams, $route, $timeout) {
 
     $scope.user = [];
     $scope.message = "";
@@ -16,20 +16,22 @@ app.controller('userDetailsController', ['$scope', 'usersListService', 'authServ
             return (($scope.user.Id === $scope.authentication.Id) && !$scope.isAdmin());
         };
     }, function (error) {
-            console.log('Eroare la userDetails :');
-            console.log(error);
-        });
+        console.log('Eroare la userDetails :');
+        console.log(error);
+    });
 
     $scope.updateUser = function (user) {
-        usersListService.updateUser(user).then(function (results) {
-            $scope.updatedSuccessfully = true;
-            $scope.message = "Utilizatorul a fost actualizat cu succes.";
-            startTimer();
-        }, function (error) {
-            $scope.updatedSuccessfully = false;
-            $scope.message = "Utilizatorul nu a fost actualizat.";
-            console.log(error);
-        });
+        usersListService.updateUser(user)
+            .then(function (results) {
+                $scope.updatedSuccessfully = true;
+                $scope.message = "Utilizatorul a fost actualizat cu succes.";
+                startTimer();
+            })
+            .catch(function (error) {
+                $scope.updatedSuccessfully = false;
+                $scope.message = "Utilizatorul nu a fost actualizat.";
+                console.log(error);
+            });
     };
     var startTimer = function () {
         var timer = $timeout(function () {

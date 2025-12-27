@@ -89,10 +89,12 @@ namespace WcfTokenService.Business
                 int User_Id = Convert.ToInt32(UserId);
 
                 User utilizator = _DbContext.Users.Find(User_Id);
+                _DbContext.Tokens.RemoveRange(_DbContext.Tokens.Where(t => t.UserId == User_Id));
                 _DbContext.Users.Remove(utilizator);
                 _DbContext.SaveChanges();
 
                 System.Diagnostics.Debug.WriteLine("dupa comanda savechanges");
+                result = true;
             }
             catch (Exception ex)
             {

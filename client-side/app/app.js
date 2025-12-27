@@ -23,12 +23,14 @@ app.config(function ($routeProvider, $locationProvider) {
 
     $routeProvider.when("/usersList", {
         controller: "usersListController",
-        templateUrl: "./app/views/lista.html"
+        templateUrl: "./app/views/lista.html",
+        requiresAuth: true // custom flag
     });
 
     $routeProvider.when("/user-details/:userID", {
         controller: "userDetailsController",
-        templateUrl: "./app/views/user-details.html"
+        templateUrl: "./app/views/user-details.html",
+        requiresAuth: true // custom flag
     });
 
     $routeProvider.otherwise({ redirectTo: "/" });
@@ -45,6 +47,19 @@ app.config(function ($httpProvider) {
     $httpProvider.interceptors.push('authInterceptorService');
 });
 
-app.run(['authService', function (authService) {
+app.run(['authService', '$rootScope', '$location', function (authService, $rootScope, $location) {
     authService.fillAuthData();
+    $rootScope.$on('$routeChangeStart', function (event, next, current) {
+        // Check if the route requires authentication
+        if (next.$$route && next.$$route.requiresAuth && !authService.isAuthenticated()) {
+            event.preventDefault();  // stop navigation
+            $location.path('/'); // redirect to home or login page
+        } else if (next.$$route
+            && (next.$$route.originalPath === '/login'
+                || next.$$route.originalPath === '/signup')
+            && authService.isAuthenticated()) {
+            event.preventDefault();  // stop navigation
+            $location.path('/usersList'); // redirect to users list page
+        }
+    });
 }]);

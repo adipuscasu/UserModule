@@ -72,10 +72,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/28/2015 04:02:54</publishTime>
     </File>
     <File Include="bin/WcfTokenService.dll">
-      <publishTime>12/27/2025 21:36:57</publishTime>
+      <publishTime>12/27/2025 23:15:59</publishTime>
     </File>
     <File Include="bin/WcfTokenService.pdb">
-      <publishTime>12/27/2025 21:36:57</publishTime>
+      <publishTime>12/27/2025 23:15:59</publishTime>
     </File>
     <File Include="bin/WTS.Model.dll">
       <publishTime>12/27/2025 21:36:56</publishTime>
