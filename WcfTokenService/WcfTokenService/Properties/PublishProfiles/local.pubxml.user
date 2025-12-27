@@ -6,9 +6,14 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>C:\inetpub\wwwroot\user.local</_PublishTargetUrl>
+    <_PublishTargetUrl>C:\inetpub\wwwroot\WcfTokenService</_PublishTargetUrl>
+    <History>True|2025-12-27T18:41:30.8883023Z||;True|2025-12-27T19:32:50.2802918+02:00||;True|2025-12-27T19:07:59.0481767+02:00||;False|2025-12-27T18:34:27.9181258+02:00||;True|2025-12-21T08:47:17.1159296+02:00||;</History>
+    <LastFailureDetails />
   </PropertyGroup>
   <ItemGroup>
+    <File Include="1.dbScripts/UserToken.sql">
+      <publishTime>12/21/2025 08:35:14</publishTime>
+    </File>
     <File Include="App_Data/BasicTokenDatabase.mdf">
       <publishTime>11/22/2016 23:48:17</publishTime>
     </File>
@@ -16,13 +21,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/22/2016 23:48:17</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
-      <publishTime>02/03/2015 09:32:26</publishTime>
+      <publishTime>06/16/2024 23:46:24</publishTime>
     </File>
     <File Include="bin/EntityFramework.SqlServer.dll">
-      <publishTime>02/03/2015 09:32:26</publishTime>
+      <publishTime>06/16/2024 23:47:02</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Data.Tools.Components.dll">
+      <publishTime>11/21/2025 18:57:42</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
-      <publishTime>08/03/2014 20:33:56</publishTime>
+      <publishTime>09/16/2025 11:04:22</publishTime>
     </File>
     <File Include="bin/System.Net.Http.Formatting.dll">
       <publishTime>01/28/2015 04:02:42</publishTime>
@@ -37,19 +45,37 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/28/2015 04:02:54</publishTime>
     </File>
     <File Include="bin/WcfTokenService.dll">
-      <publishTime>11/22/2016 23:53:15</publishTime>
+      <publishTime>12/27/2025 20:41:30</publishTime>
+    </File>
+    <File Include="bin/WcfTokenService.pdb">
+      <publishTime>12/27/2025 20:41:30</publishTime>
+    </File>
+    <File Include="bin/WTS.Model.dll">
+      <publishTime>12/27/2025 17:31:30</publishTime>
+    </File>
+    <File Include="bin/WTS.Model.dll.config">
+      <publishTime>12/21/2025 12:47:13</publishTime>
+    </File>
+    <File Include="bin/WTS.Model.pdb">
+      <publishTime>12/27/2025 17:31:30</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>12/21/2025 08:35:14</publishTime>
     </File>
     <File Include="packages.config">
       <publishTime>11/22/2016 23:52:53</publishTime>
     </File>
     <File Include="Services/AuthenticationTokenService.svc">
-      <publishTime>11/20/2016 21:35:29</publishTime>
+      <publishTime>12/21/2025 08:35:14</publishTime>
     </File>
     <File Include="Services/Test1Service.svc">
       <publishTime>11/17/2016 23:17:36</publishTime>
     </File>
+    <File Include="Services/UserService.svc">
+      <publishTime>12/21/2025 08:35:14</publishTime>
+    </File>
     <File Include="Web.config">
-      <publishTime>11/22/2016 23:53:15</publishTime>
+      <publishTime>12/27/2025 20:41:30</publishTime>
     </File>
   </ItemGroup>
 </Project>

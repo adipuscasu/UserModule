@@ -56,7 +56,7 @@ namespace WcfTokenService.Behaviors
         private static void ValidateBasicAuthentication()
         {
             var authorization = WebOperationContext.Current.IncomingRequest.Headers["Authorization"];
-            if (string.IsNullOrWhiteSpace(authorization))
+            if (!string.IsNullOrWhiteSpace(authorization))
             {
                 using (var dbContext = new UserTokenDbContext())
                 {

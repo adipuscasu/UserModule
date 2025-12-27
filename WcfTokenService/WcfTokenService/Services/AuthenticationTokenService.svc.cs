@@ -22,7 +22,7 @@ namespace WcfTokenService.Services
             }
             using (var dbContext = new UserTokenDbContext())
             {
-                    return new DatabaseTokenBuilder(dbContext).Build(creds);                
+                    return new DatabaseTokenBuilder(dbContext).Build(creds);
             }
         }
     }

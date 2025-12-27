@@ -18,7 +18,7 @@ namespace WcfTokenService.Business
 
         public BasicAuth(string encodedHeader, Encoding encoding)
         {
-            HeaderValue = encodedHeader;
+            HeaderValue = encodedHeader ?? throw new ArgumentNullException("encodedHeader");
             var decodedHeader = encodedHeader.StartsWith(Prefix, StringComparison.OrdinalIgnoreCase)
                 ? encoding.GetString(Convert.FromBase64String(encodedHeader.Substring(Prefix.Length)))
                 : encoding.GetString(Convert.FromBase64String(encodedHeader));
