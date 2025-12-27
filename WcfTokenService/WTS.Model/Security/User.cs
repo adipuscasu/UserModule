@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
+using System.Runtime.Serialization;
 
 namespace WTS.Model.Security
 {
@@ -13,6 +14,7 @@ namespace WTS.Model.Security
     }
 
     [Table("User")]
+    [DataContract]
     public partial class User
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,11 +23,13 @@ namespace WTS.Model.Security
             Tokens = new HashSet<Token>();
         }
 
+        [DataMember]
         public int Id { get; set; }
 
         [Column("Username")]
         [Required]
         [StringLength(50)]
+        [DataMember]
         public string Username { get; set; }
 
         [Required]
@@ -38,6 +42,7 @@ namespace WTS.Model.Security
 
         [Required]
         [StringLength(50)]
+        [DataMember]
         public string Role { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
