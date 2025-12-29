@@ -4,13 +4,13 @@ app.factory('authInterceptorService', ['$q', '$injector', '$location', function 
     var authInterceptorServiceFactory = {};
 
     var _request = function (config) {
-
         config.headers = config.headers || {};
         return config;
     }
 
     var _responseError = function (rejection) {
         if (rejection.status === 401) {
+            var authService = $injector.get('authService');
             authService.logOut();
             $location.path('/login');
         }

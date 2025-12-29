@@ -3,20 +3,24 @@ app.controller('usersListController', ['$scope', 'usersListService', 'authServic
 
     $scope.users = [];
     $scope.message = "";
+    $scope.hasError = false;
+    $scope.authentication = authService.authentication;
+
+
     usersListService.getAllUsers()
-        .then(function (results) {
-            $scope.users = results.data.d;
-            $scope.authentication = authService.authentication;
-            $scope.isAdmin = function () {
-                return $scope.authentication.Role === 'admin';
-            }
+        .then(function (users) {
+            $scope.users = users;  // results is already the array, not results.data.d
         })
         .catch(function (err) {
-            console.log('error in getAllUsers: ', err);
+            $scope.hasError = true;
+            $scope.message = err || "Eroare la incarcare lista utilizatorilor";
+            console.error('error in getAllUsers: ', err);
         });
+
     $scope.userViewDetails = function (userID) {
         $location.path('/user-details/' + userID);
     };
+
     $scope.userDelete = function (userID) {
         usersListService.deleteUser(userID)
             .then(function (results) {
@@ -26,9 +30,15 @@ app.controller('usersListController', ['$scope', 'usersListService', 'authServic
                 startTimer();
             })
             .catch(function (err) {
-                console.log('error in deleteUser: ', err);
+                $scope.hasError = true;
+                $scope.message = "Eroare la stergerea utilizatorului: " + (err.message || err);
+                console.error('error in deleteUser: ', err);
             });
     };
+    $scope.isAdmin = function () {
+        return $scope.authentication?.userRole === 'admin';
+    }
+
     var startTimer = function () {
         var timer = $timeout(function () {
             $timeout.cancel(timer);

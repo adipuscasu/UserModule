@@ -13,7 +13,7 @@ namespace WcfTokenService.Interfaces
         [WebInvoke(Method = "GET",
            RequestFormat = WebMessageFormat.Json,
            ResponseFormat = WebMessageFormat.Json)]
-        List<User> GetAllUsers();
+        ServiceResponse<List<User>> GetAllUsers();
 
         [OperationContract]
         [WebInvoke(Method = "POST",
@@ -30,7 +30,7 @@ namespace WcfTokenService.Interfaces
         [WebInvoke(Method = "GET",
            RequestFormat = WebMessageFormat.Json,
            ResponseFormat = WebMessageFormat.Json)]
-        User GetUserDetails(string UserId);
+        ServiceResponse<User> GetUserDetails(string UserId);
 
         [OperationContract]
         [WebInvoke(Method = "POST",

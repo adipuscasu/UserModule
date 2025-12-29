@@ -4,30 +4,41 @@ app.factory('usersListService', ['$http', 'ngAuthSettings', '$rootScope', 'authS
     var serviceBase = ngAuthSettings.apiServiceBaseUri;
 
     var usersListServiceFactory = {};
-    //stabilesc valorile de baza
     var token = $rootScope.apiKey;
     $http.defaults.headers.common['Token'] = token;
-    $http.defaults.headers.common['Authorization'] = "cu token"; //pun un sir pentru a avea header-ul definit
+    $http.defaults.headers.common['Authorization'] = "cu token";
 
     var _getUsersList = function () {
-        return $http.get(serviceBase + 'UserService.svc/GetAllUsers').then(function (results) {
-            return results;
-        });
+        return $http.get(serviceBase + 'UserService.svc/GetAllUsers')
+            .then(function (response) {
+                if (response.data.d.Success) {
+                    return response.data.d.Data;
+                } else {
+                    return Promise.reject(response.data.d.Message);
+                }
+            })
+            .catch(function (err) {
+                console.log('error getting users list: ', err);
+                return Promise.reject("Eroare la incarcare lista utilizatorilor: " + (err?.message || err));
+            });
     };
 
     var _deleteUser = function (userID) {
         var deleteUser = {
             UserId: userID
         };
-
-        return $http.post(serviceBase + 'UserService.svc/DeleteUser',deleteUser).then(function (results) {
-            return results;
+        return $http.post(serviceBase + 'UserService.svc/DeleteUser', deleteUser).then(function (response) {
+            return response.data;
         });
     };
 
-    var _userDetails = function (userID) {      
-        return $http.get(serviceBase + 'UserService.svc/GetUserDetails', { params: {UserId:userID}}).then(function (results) {
-            return results;
+    var _userDetails = function (userID) {
+        return $http.get(serviceBase + 'UserService.svc/GetUserDetails', { params: { UserId: userID } }).then(function (response) {
+            if (response.data.Success) {
+                return response.data.Data;
+            } else {
+                return Promise.reject(response.data.Message);
+            }
         });
     };
 
@@ -39,13 +50,12 @@ app.factory('usersListService', ['$http', 'ngAuthSettings', '$rootScope', 'authS
             Salt: user.Salt,
             Role: user.Role
         };
-        return $http.post(serviceBase + 'UserService.svc/UpdateUser', Utilizator).then(function (results) {
-            //actualizez si informatiile despre utilizatorul autentificat, daca este cazul.
+        return $http.post(serviceBase + 'UserService.svc/UpdateUser', Utilizator).then(function (response) {
             if ($rootScope.authentication.Id === Utilizator.Id) {
                 $rootScope.authentication.userName = Utilizator.Username;
                 $rootScope.authentication.Role = Utilizator.Role;
             }
-            return results;
+            return response.data;
         });
     };
 

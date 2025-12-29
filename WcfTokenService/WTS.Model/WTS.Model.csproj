@@ -83,6 +83,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\MyError.cs" />
+    <Compile Include="Common\ServiceResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Security\Credentials.cs" />
     <Compile Include="Security\Token.cs" />

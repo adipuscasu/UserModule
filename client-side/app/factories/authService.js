@@ -1,13 +1,20 @@
 ﻿'use strict';
-app.factory('authService', ['$http', '$q', 'ngAuthSettings', 'Base64Factory', '$rootScope', '$cookies', function ($http, $q, ngAuthSettings, Base64Factory, $rootScope, $cookies) {
+app.factory('authService', ['$http', '$q', 'ngAuthSettings', 'Base64Factory', '$rootScope', '$cookies', '$window', function ($http, $q, ngAuthSettings, Base64Factory, $rootScope, $cookies, $window) {
 
     var serviceBase = ngAuthSettings.apiServiceBaseUri;
     var externalProviderUrl = serviceBase + 'AuthenticationTokenService.svc/Authenticate';
     var authServiceFactory = {};
+    
     // restore from localStorage if available
-    var authorizationData = JSON.parse(window.localStorage.getItem('authorizationData'));
+    var authorizationData = null;
+    try {
+        authorizationData = JSON.parse($window.localStorage.getItem('authorizationData'));
+    } catch (e) {
+        console.error('Error parsing authorizationData:', e);
+        authorizationData = null;
+    }
+    
     var username = authorizationData ? authorizationData.username : null;
-    console.log('authorizationData: ', authorizationData);
 
     var _authentication = {
         isAuth: false,
@@ -24,7 +31,6 @@ app.factory('authService', ['$http', '$q', 'ngAuthSettings', 'Base64Factory', '$
         _authentication.token = authorizationData.token;
     }
 
-
     var _saveRegistration = function (registration) {
         _logOut();
         $http.defaults.headers.common['Token'] = "signup";
@@ -33,21 +39,17 @@ app.factory('authService', ['$http', '$q', 'ngAuthSettings', 'Base64Factory', '$
             _logOut();
             return response;
         });
-
     };
 
     var _login = function (loginData) {
-
         var data = "grant_type=password&username=" + loginData.userName + "&password=" + loginData.password;
         var deferred = $q.defer();
 
         var authString = 'Basic ' + Base64Factory.encode(loginData.userName + ':' + loginData.password)
 
-
         $http.defaults.headers.common['Authorization'] = authString;
         $http({ method: 'POST', url: externalProviderUrl })
             .then(function (data, status, headers, config, response) {
-
                 _authentication.isAuth = true;
                 _authentication.userName = data.data.d.UserName;
                 _authentication.token = data.data.d.token;
@@ -67,10 +69,7 @@ app.factory('authService', ['$http', '$q', 'ngAuthSettings', 'Base64Factory', '$
                 $cookies.put('globals', $rootScope.globals);
 
                 deferred.resolve(response);
-                // this callback will be called asynchronously
-                // when the response is available
-                // using local storage for keeping user logged in between page refreshes
-                window.localStorage.setItem('authorizationData',JSON.stringify(currentUser));
+                $window.localStorage.setItem('authorizationData', JSON.stringify(currentUser));
             })
             .catch(function (err) {
                 console.log('eroare la login: ', err);
@@ -79,11 +78,9 @@ app.factory('authService', ['$http', '$q', 'ngAuthSettings', 'Base64Factory', '$
             });
 
         return deferred.promise;
-
     };
 
     var _logOut = function () {
-
         $http.defaults.headers.common['Token'] = "";
         _authentication.isAuth = false;
         _authentication.userName = "";
@@ -91,29 +88,39 @@ app.factory('authService', ['$http', '$q', 'ngAuthSettings', 'Base64Factory', '$
         _authentication.Id = '';
         _authentication.token = '';
         $rootScope.apiKey = "";
-        //folosesc cookies
         $rootScope.globals = {};
         $cookies.remove('globals');
-        // remove from local storage
-        window.localStorage.removeItem('authorizationData');
-
+        $window.localStorage.removeItem('authorizationData');
     };
+
     var isAuthenticated = function () {
         return _authentication.isAuth;
     };
 
     var _fillAuthData = function () {
-        $cookies.get('globals', $rootScope.globals);
-        if ($rootScope.globals) {
-            _authentication.isAuth = true;
-            _authentication.userName = $rootScope.globals.currentUser.username;
-            _authentication.token = $rootScope.globals.currentUser.token;
-            _authentication.Role = $rootScope.globals.currentUser.Role;
-            _authentication.Id = $rootScope.globals.currentUser.Id;
+        var authData = $window.localStorage.getItem('authorizationData');
+        if (authData) {
+            try {
+                authServiceFactory.authentication = JSON.parse(authData);
+                authServiceFactory.authentication.isAuth = true;
+            } catch (e) {
+                console.error('Error parsing authData from localStorage:', e);
+                console.log('Raw data was:', authData);
+                $window.localStorage.removeItem('authorizationData');
+                authServiceFactory.authentication = {
+                    isAuth: false,
+                    userName: '',
+                    useRefreshTokens: false
+                };
+            }
+        } else {
+            authServiceFactory.authentication = {
+                isAuth: false,
+                userName: '',
+                useRefreshTokens: false
+            };
         }
-
     };
-
 
     authServiceFactory.saveRegistration = _saveRegistration;
     authServiceFactory.login = _login;

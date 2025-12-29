@@ -15,18 +15,40 @@ namespace WcfTokenService.Behaviors
         public object AfterReceiveRequest(ref Message request, IClientChannel channel, InstanceContext instanceContext)
         {
             // Return BadRequest if request is null
-            if (WebOperationContext.Current == null) { throw new WebFaultException(HttpStatusCode.BadRequest); }
+            if (WebOperationContext.Current == null) { throw new WebFaultException(HttpStatusCode.Unauthorized); }
 
-            // Get Token from header
-            var token = WebOperationContext.Current.IncomingRequest.Headers["Token"];
-            if (!string.IsNullOrWhiteSpace(token))
+            try
             {
-                ValidateToken(token);
+                // Get Token from header
+                var token = WebOperationContext.Current.IncomingRequest.Headers["Token"];
+                if (!string.IsNullOrWhiteSpace(token))
+                {
+                    ValidateToken(token);
+                }
+                else
+                {
+                    ValidateBasicAuthentication();
+                }
             }
-            else
+            catch (WebFaultException err)
             {
-                ValidateBasicAuthentication();
+                // Re-throw WebFaultException as-is (e.g., Forbidden from ValidateToken)
+                // todo : log the error
+                System.Diagnostics.Debug.WriteLine("Eroare generica la validarea token-ului: " + err.Message);
+                throw new WebFaultException(HttpStatusCode.Unauthorized);
             }
+            catch (AuthenticationException)
+            {
+                // Convert AuthenticationException to 401 Unauthorized
+                throw new WebFaultException(HttpStatusCode.Unauthorized);
+            }
+            catch (System.Exception err)
+            {
+                // Catch any other unexpected exceptions and return 401
+                System.Diagnostics.Debug.WriteLine("Eroare generica la validarea token-ului: " + err.Message);
+                throw new WebFaultException(HttpStatusCode.InternalServerError);
+            }
+
             return null;
         }
 
@@ -43,11 +65,11 @@ namespace WcfTokenService.Behaviors
                         throw new WebFaultException(HttpStatusCode.Forbidden);
                     }
                     // Add User ids to the header so the service has them if needed
-                    WebOperationContext.Current.IncomingRequest.Headers.Add("User", validator.Token.User.Username);
-                    WebOperationContext.Current.IncomingRequest.Headers.Add("UserId", validator.Token.User.Id.ToString());
-                    WebOperationContext.Current.OutgoingResponse.Headers.Add("User", validator.Token.User.Username.ToString());
-                    WebOperationContext.Current.OutgoingResponse.Headers.Add("UserId", validator.Token.User.Id.ToString());
-                    WebOperationContext.Current.OutgoingResponse.Headers.Add("Role", validator.Token.User.Role.ToString());
+                    //WebOperationContext.Current.IncomingRequest.Headers.Add("User", validator.Token.User.Username);
+                    //WebOperationContext.Current.IncomingRequest.Headers.Add("UserId", validator.Token.User.Id.ToString());
+                    //WebOperationContext.Current.OutgoingResponse.Headers.Add("User", validator.Token.User.Username.ToString());
+                    //WebOperationContext.Current.OutgoingResponse.Headers.Add("UserId", validator.Token.User.Id.ToString());
+                    //WebOperationContext.Current.OutgoingResponse.Headers.Add("Role", validator.Token.User.Role.ToString());
                 }
             }
         }

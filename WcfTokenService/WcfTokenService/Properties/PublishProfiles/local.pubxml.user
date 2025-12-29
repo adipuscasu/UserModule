@@ -7,7 +7,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <_PublishTargetUrl>C:\inetpub\wwwroot\WcfTokenService</_PublishTargetUrl>
-    <History>True|2025-12-27T19:30:39.9463779Z||;True|2025-12-27T21:26:04.9833875+02:00||;True|2025-12-27T21:20:20.2188808+02:00||;True|2025-12-27T21:06:18.7160056+02:00||;True|2025-12-27T20:41:30.8883023+02:00||;True|2025-12-27T19:32:50.2802918+02:00||;True|2025-12-27T19:07:59.0481767+02:00||;False|2025-12-27T18:34:27.9181258+02:00||;True|2025-12-21T08:47:17.1159296+02:00||;</History>
+    <History>True|2025-12-29T20:05:47.2849852Z||;True|2025-12-27T21:30:39.9463779+02:00||;True|2025-12-27T21:26:04.9833875+02:00||;True|2025-12-27T21:20:20.2188808+02:00||;True|2025-12-27T21:06:18.7160056+02:00||;True|2025-12-27T20:41:30.8883023+02:00||;True|2025-12-27T19:32:50.2802918+02:00||;True|2025-12-27T19:07:59.0481767+02:00||;False|2025-12-27T18:34:27.9181258+02:00||;True|2025-12-21T08:47:17.1159296+02:00||;</History>
     <LastFailureDetails />
   </PropertyGroup>
   <ItemGroup>
@@ -72,19 +72,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/28/2015 04:02:54</publishTime>
     </File>
     <File Include="bin/WcfTokenService.dll">
-      <publishTime>12/27/2025 23:15:59</publishTime>
+      <publishTime>12/29/2025 22:05:47</publishTime>
     </File>
     <File Include="bin/WcfTokenService.pdb">
-      <publishTime>12/27/2025 23:15:59</publishTime>
+      <publishTime>12/29/2025 22:05:47</publishTime>
     </File>
     <File Include="bin/WTS.Model.dll">
-      <publishTime>12/27/2025 21:36:56</publishTime>
+      <publishTime>12/29/2025 22:05:46</publishTime>
     </File>
     <File Include="bin/WTS.Model.dll.config">
       <publishTime>12/21/2025 12:47:13</publishTime>
     </File>
     <File Include="bin/WTS.Model.pdb">
-      <publishTime>12/27/2025 21:36:56</publishTime>
+      <publishTime>12/29/2025 22:05:46</publishTime>
     </File>
     <File Include="Global.asax">
       <publishTime>12/21/2025 08:35:14</publishTime>
